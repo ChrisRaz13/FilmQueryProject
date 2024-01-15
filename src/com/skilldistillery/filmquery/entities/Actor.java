@@ -5,20 +5,12 @@ import java.util.Objects;
 
 public class Actor {
 	private int id;
-	private int firstName;
-	private int lastName;
+	private String firstName;
+	private String lastName;
 	private List<Film> films;
 
 	public Actor() {
 
-	}
-
-	public Actor(int id, int firstName, int lastName, List<Film> films) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.films = films;
 	}
 
 	public int getId() {
@@ -29,19 +21,19 @@ public class Actor {
 		this.id = id;
 	}
 
-	public int getFirstName() {
+	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(int firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-	public int getLastName() {
+	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(int lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
@@ -53,9 +45,12 @@ public class Actor {
 		this.films = films;
 	}
 
-	@Override
-	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", films=" + films + "]";
+	public Actor(int id, String firstName, String lastName, List<Film> films) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.films = films;
 	}
 
 	@Override
@@ -72,18 +67,13 @@ public class Actor {
 		if (getClass() != obj.getClass())
 			return false;
 		Actor other = (Actor) obj;
-		return Objects.equals(films, other.films) && firstName == other.firstName && id == other.id
-				&& lastName == other.lastName;
+		return Objects.equals(films, other.films) && Objects.equals(firstName, other.firstName) && id == other.id
+				&& Objects.equals(lastName, other.lastName);
 	}
 
-	public void setFirstName(String firstName) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setLastName(String lastName) {
-		// TODO Auto-generated method stub
-		
+	@Override
+	public String toString() {
+		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", films=" + films + "]";
 	}
 
 }
