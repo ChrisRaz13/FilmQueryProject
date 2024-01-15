@@ -5,7 +5,9 @@ An application designed to provide users with information about films and actors
 
 # Tech Used
 Java/Eclipse
+
 MySQL - database management system
+
 JDBC - For database interaction
 
 # Lessons Learned
